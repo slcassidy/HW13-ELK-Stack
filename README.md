@@ -23,13 +23,13 @@ The main purpose of this network is to expose a load-balanced and monitored inst
 
 Load balancing ensures that the application will be highly _____, in addition to restricting _____ to the network.
 - _What aspect of security do load balancers protect?_ 
-  - @@Load balancer prevents VM overload as it spreads the load among multipule VMs.  There is also a health probe that verifies that the VMs can handle the volume of requests.@@
+  + Load balancer prevents VM overload as it spreads the load among multipule VMs.  There is also a health probe that verifies that the VMs can handle the volume of requests.
 - _What is the advantage of a jump box?_
-  - **It locks down the entry point for admin tasks as all commands must connect through the jumpbox.  A JumpBox is a single entry point vs allowing admin commands directly on each VM**
+  + It locks down the entry point for admin tasks as all commands must connect through the jumpbox.  A JumpBox is a single entry point vs allowing admin commands directly on each VM**
 
 Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the **webservers** and system **logs**.
 - _What does Filebeat watch for?_
-  -**Collects log files from specific files of interest about the file system**
+  + Collects log files from specific files of interest about the file system
 - _What does Metricbeat record?_
   + Collects machine metric logs
 
@@ -48,19 +48,22 @@ _Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdow
 The machines on the internal network are not exposed to the public Internet. 
 
 Only the **Jump Box** machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
-- _TODO: Add whitelisted IP addresses_
+- 73.137.124.126
 
 Machines within the network can only be accessed by **the Jump Box**.
-- _TODO: Which machine did you allow to access your ELK VM? What was its IP address?_
+- _Which machine did you allow to access your ELK VM?_
+  +
+- _What was its IP address?_
+  +
 
 A summary of the access policies in place can be found in the table below.
 
 | Name     | Publicly Accessible | Allowed IP Addresses |
 |----------|---------------------|----------------------|
-| Jump Box | Yes/No              | 10.0.0.1 10.0.0.2    |
-|          |                     |                      |
-|          |                     |                      |
-
+| Jump Box | Yes                 |    73.137.124.12     |
+| Web-1    | No                  |                      |
+| Web-2    | No                  |                      |
+| ELK-VM   | No                  |                      |
 ### Elk Configuration
 
 Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because...
@@ -80,7 +83,8 @@ This ELK server is configured to monitor the following machines:
 - _TODO: List the IP addresses of the machines you are monitoring_
 
 We have installed the following Beats on these machines:
-- _TODO: Specify which Beats you successfully installed_
+- filebeat
+- metricbeat
 
 These Beats allow us to collect the following information from each machine:
 - _TODO: In 1-2 sentences, explain what kind of data each beat collects, and provide 1 example of what you expect to see. E.g., `Winlogbeat` collects Windows logs, which we use to track user logon events, etc._
