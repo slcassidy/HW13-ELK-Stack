@@ -31,8 +31,7 @@ Integrating an ELK server allows users to easily monitor the vulnerable VMs for 
 - _What does Filebeat watch for?_
   -**Collects log files from specific files of interest about the file system**
 - _What does Metricbeat record?_
-  -**Collects machine metric logs**
-  - ![checking to see what is listed](https://imgstack.try2explore.com/i/aHR0cHM6Ly9wbGFjZWhvbGQuaXQvMTUvMTU4OUYwLzAwMDAwMD90ZXh0PSs=.jpg) `#1589F0`
+  + Collects machine metric logs
 
 The configuration details of each machine may be found below.
 _Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdown_tables) to add/remove values from the table_.
