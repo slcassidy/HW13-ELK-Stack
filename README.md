@@ -129,11 +129,12 @@ _Answer the following questions to fill in the blanks:_
 - _Which URL do you navigate to in order to check that the ELK server is running?
   + **http://[your.VM.IP]:5601/app/kibana**
 
-*--------------------------------------------------------------------------*
+*------------------------------------------------------------------------------------*
 
 
 _**Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc._
-**Metricbeat**
+
+<ins>Metricbeat</ins>
 - Download the config file by going to: `curl https://gist.githubusercontent.com/slape/58541585cc1886d2e26cd8be557ce04c/raw/0ce2c7e744c54513616966affb5e9d96f5e12f73/metricbeat >> /etc/ansible/metricbeat-config.yml`
 - `mkdir files`
 - `mv metricbeat-config.yml > files `
@@ -141,7 +142,7 @@ _**Bonus**, provide the specific commands the user will need to run to download 
 - Update the hosts to ELK private IP
 - `CTRL X`
 
-**Filebeat**
+<ins>Filebeats<ins>
 - Download the config file by going to : `curl https://gist.githubusercontent.com/slape/5cc350109583af6cbe577bbcc0710c93/raw/eca603b72586fbe148c11f9c87bf96a63cb25760/Filebeat >> /etc/ansible/filebeat-config.yml`
 - `mkdir files`
 - `mv filebeat-config.yml > files `
