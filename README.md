@@ -98,10 +98,12 @@ We have installed the following Beats on these machines:
 - metricbeat playbook
 
 These Beats allow us to collect the following information from each machine:
-- *<ins>Filebeats<ins>* collects system/event logs from the webservers. The is forwarded to the Elasticsearch/Logstash and Kibana provides the visualization.  Example shown below shows the log events that occured on Aug 9th with all the details related from the webservers
+- *<ins>Filebeats<ins>* collects system/event logs from the webservers. The is forwarded to the Elasticsearch/Logstash and Kibana provides the visualization.  Example shown below shows the log events that occured on Aug 9th with all the details related from the webservers.
+
 ![Kibana Filebeat](Linux/Filebeat-syslog.png)
 
 - *<ins>Metricbeat</ins>* collects metrics from the ooperating system and from servicese running on the server.  The data is forwarded on to the Elasticsearch/Logstash and Kibana provides the visualization.  Example as shown in the image below the metrics are showing the % of Memory and CPU being utiliized.
+
 ![Kibana Metricbeat](Linux/Metricbeat-ecs.png)
 ### Using the Playbook
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
@@ -113,16 +115,23 @@ SSH into the control node and follow the steps below:
 
 _Answer the following questions to fill in the blanks:_
 - _Which file is the playbook?_
-  + ![filebeat-playbook](Ansible/filebeat-playbook.yml)/ ![metricbeat-playbook](Ansible/metricbeat-playbook.yml)
-  - _Where do you copy it?_
-    + `/etc/ansible/`
+  + ![filebeat-playbook](Ansible/filebeat-playbook.yml)
+  + ![metricbeat-playbook](Ansible/metricbeat-playbook.yml)
+- _Where do you copy the playbook?_
+   + `/etc/ansible/`
+
 - _Which file do you update to make Ansible run the playbook on a specific machine?_
-  + filebeat-config / metricbeat-config
+  + filebeat-config
+  + metricbeat-config
+
   - _How do I specify which machine to install the ELK server on versus which to install Filebeat on?_
   + They are the same server that installs the beats and the ELK
 - _Which URL do you navigate to in order to check that the ELK server is running?
   + **http://[your.VM.IP]:5601/app/kibana**
-**-----------------------------------------------------------------------------**
+
+*--------------------------------------------------------------------------*
+
+
 _**Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc._
 **Metricbeat**
 - Download the config file by going to: `curl https://gist.githubusercontent.com/slape/58541585cc1886d2e26cd8be557ce04c/raw/0ce2c7e744c54513616966affb5e9d96f5e12f73/metricbeat >> /etc/ansible/metricbeat-config.yml`
