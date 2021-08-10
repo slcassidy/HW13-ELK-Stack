@@ -22,14 +22,18 @@ This document contains the following details:
 The main purpose of this network is to expose a load-balanced and monitored instance of DVWA, the D*mn Vulnerable Web Application.
 
 Load balancing ensures that the application will be highly **accessible & reliabile**, in addition to restricting *access* to the network.
+
 - _What aspect of security do load balancers protect?_ 
   + Load balancer prevents VM overload as it spreads the load among multipule VMs.  There is also a health probe that verifies that the VMs can handle the volume of requests.
+
 - _What is the advantage of a jump box?_
   + It locks down the entry point for admin tasks as all commands must connect through the jumpbox.  A JumpBox is a single entry point vs allowing admin commands directly on each VM**
 
 Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the **webservers** and system **logs**.
+
 - _What does Filebeat watch for?_
   + Collects log files from specific files of interest about the file system
+
 - _What does Metricbeat record?_
   + Collects machine metric logs
 
@@ -53,6 +57,7 @@ Only the **Jump Box** machine can accept connections from the Internet. Access t
 Machines within the network can only be accessed by **the Jump Box**.
 - _Which machine did you allow to access your ELK VM?_
   + The Jump Box 
+
 - _What was its IP address?_
   + Jumpbox: 10.2.0.5 
 
@@ -117,6 +122,7 @@ _Answer the following questions to fill in the blanks:_
 - _Which file is the playbook?_
   + ![filebeat-playbook](Ansible/filebeat-playbook.yml)
   + ![metricbeat-playbook](Ansible/metricbeat-playbook.yml)
+
 - _Where do you copy the playbook?_
    + `/etc/ansible/`
 
@@ -126,7 +132,7 @@ _Answer the following questions to fill in the blanks:_
 
   - _How do I specify which machine to install the ELK server on versus which to install Filebeat on?_
   + They are the same server that installs the beats and the ELK
-- _Which URL do you navigate to in order to check that the ELK server is running?
+- _Which URL do you navigate to in order to check that the ELK server is running?_
   + **http://[your.VM.IP]:5601/app/kibana**
 
 *------------------------------------------------------------------------------------*
