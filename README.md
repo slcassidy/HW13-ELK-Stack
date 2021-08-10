@@ -52,9 +52,9 @@ Only the **Jump Box** machine can accept connections from the Internet. Access t
 
 Machines within the network can only be accessed by **the Jump Box**.
 - _Which machine did you allow to access your ELK VM?_
-  + The Jump Box & Personal IP address
+  + The Jump Box 
 - _What was its IP address?_
-  + Jumpbox: 10.2.0.5 & Personal IP: XX.XXX.XXX.X26
+  + Jumpbox: 10.2.0.5 
 
 A summary of the access policies in place can be found in the table below.
 
@@ -63,7 +63,7 @@ A summary of the access policies in place can be found in the table below.
 | Jump Box | Yes                 | 10.2.0.6, 10.2.0.7, 10.1.0.4 |
 | Web-1    | No                  |     10.2.0.5                 |
 | Web-2    | No                  |     10.2.0.5                 |
-| ELK-VM   | No                  | 10.2.0.5 & XX.XXX.XXX.X26    |
+| ELK-VM   | No                  |     10.2.0.5                 |
 ### Elk Configuration
 
 Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because...
@@ -85,11 +85,11 @@ The playbook implements the following tasks:
 
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
 
-![TODO: Update the path with the name of your screenshot of docker ps output](Ansible/docker_ps.png)
+<img src="https://github.com/slcassidy/HW13-ELK-Stack/blob/main/Ansible/docker_ps.png" width=400 height=90>
 
 ### Target Machines & Beats
 This ELK server is configured to monitor the following machines:
-- _List the IP addresses of the machines you are monitoring_
+- 10.2.0.7 & 10.2.0.6 
 
 We have installed the following Beats on these machines:
 - filebeat configuration
