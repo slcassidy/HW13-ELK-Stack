@@ -99,7 +99,11 @@ We have installed the following Beats on these machines:
 
 These Beats allow us to collect the following information from each machine:
 - _TODO: In 1-2 sentences, explain what kind of data each beat collects, and provide 1 example of what you expect to see. E.g., `Winlogbeat` collects Windows logs, which we use to track user logon events, etc._
+- Filebeats collects system/event logs from the webservers. The is forwarded to the Elasticsearch/Logstash and Kibana provides the visualization.  Example shown below shows the log events that occured on Aug 9th with all the details related from the webservers
+![Kibana Filebeat](Linux/Filebeat-syslog.png)
 
+- Metricbeat collects metrics from the ooperating system and from servicese running on the server.  The data is forwarded on to the Elasticsearch/Logstash and Kibana provides the visualization.  Example as shown in the image below the metrics are showing the % of Memory and CPU being utiliized.
+![Kibana Metricbeat](Linux/Metricbeat-ecs.png)
 ### Using the Playbook
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
 
